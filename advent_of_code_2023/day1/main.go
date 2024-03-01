@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"time"
     "strings"
-    "day1/part1"
+    "day1/parts"
 )
 
 func main() {
