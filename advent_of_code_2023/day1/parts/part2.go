@@ -1,6 +1,8 @@
 package parts
 
-import "fmt"
+import (
+	"strings"
+)
 
 // STEPS:
 // 1. compare char (input) by char (map) ???
@@ -8,46 +10,20 @@ import "fmt"
 // NAME EVERYTHING HERE STARTING WITH CAP
 func NumberReader(file_string string) string{
     mapped_nums := map[string]string{
-        "one": "1",
-        "two": "2",
-        "three": "3",
-        "four": "4",
-        "five": "5",
-        "six": "6",
-        "seven": "7",
-        "eight": "8",
-        "nine": "9",
+        "one": "one1one",
+        "two": "two2two",
+        "three": "three3three",
+        "four": "four4four",
+        "five": "five5five",
+        "six": "six6six",
+        "seven": "seven7seven",
+        "eight": "eight8eight",
+        "nine": "nine9nine",
     }
 
-    test_slice := []string{
-        "two1nine",
-        "eightwothree",
-        "abcone2threexyz",
-        "xtwone3four",
-        "4nineeightseven2",
-        "zoneight234",
-        "7pqrstsixteen",
+    for old, new := range mapped_nums {
+        file_string = strings.Replace(file_string, old, new, -1)
     }
 
-
-    for _, i := range test_slice {
-        for _, j := range i {
-            for r, l := range mapped_nums {
-                for _, t := range r {
-                    fmt.Println("test_slice letter:", string(j))
-                    fmt.Println("mapped_num letter:", string(t))
-                    fmt.Println("mapped_num number:", string(l))
-                    if j == t {
-                        fmt.Println("MATCHED")
-                        continue
-                    } else { fmt.Println("BREAK"); break }
-                }
-                break
-            }
-            break
-        }
-        break
-    }
-    return ""
-    // return file_string
+    return file_string
 }

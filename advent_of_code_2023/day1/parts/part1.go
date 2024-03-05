@@ -2,7 +2,6 @@ package parts
 
 import (
     "log"
-    "os"
     "strconv"
     "unicode"
 )
@@ -11,18 +10,6 @@ import (
 // 1. no digit? -> ???
 // 2. one digit? -> **USE THAT DIGIT TWICE**
 // 3. multiple digits? -> **FIRST AND LAST**
-
-// Aaron's Logic
-// MUST BE CAPS
-func Readtxt(file_path string) []byte {
-    // read txt in to content (string) variable
-    content, err := os.ReadFile(file_path)
-    if err != nil {
-        log.Fatal(err)
-    }
-
-    return content
-}
 
 // MUST BE CAPS
 func IsDigit(slice_output []string) int {

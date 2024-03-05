@@ -5,6 +5,7 @@ import (
 	"time"
     "strings"
     "day1/parts"
+    "day1/lib"
 )
 
 func part1() {
@@ -16,7 +17,7 @@ func part1() {
     file_path := "input.txt"
 
     // GLOBAL - read function (most efficient read method)
-    content := parts.Readtxt(file_path)
+    content := lib.ReadTxt(file_path)
 
     // AARON'S VERSION
     // get string output and convert to slice
@@ -46,7 +47,7 @@ func part2() {
     file_path := "input.txt"
 
     // GLOBAL - read function (most efficient read method)
-    content := parts.Readtxt(file_path)
+    content := lib.ReadTxt(file_path)
 
     // get string output and convert to slice
     // slice_output := strings.Split(string(content), "\n")
@@ -58,7 +59,6 @@ func part2() {
     total := parts.IsDigit(slice_output)
 
     // GLOBAL - print total
-    fmt.Println()
     fmt.Println("TOTAL:", total)
 
     // elapsed time for optimization
@@ -69,6 +69,9 @@ func part2() {
 }
 
 func main() {
-    // part1()
+    fmt.Println("PART 1:")
+    part1()
+    fmt.Println()
+    fmt.Println("PART 2:")
     part2()
 }
