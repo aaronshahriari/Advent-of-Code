@@ -17,8 +17,8 @@ func main() {
     // starting time to check optimization
     start := time.Now()
 
-    content := lib.ReadTxt("inputs/sample_p1.txt")
-    // content := lib.ReadTxt("inputs/input.txt")
+    // content := lib.ReadTxt("inputs/sample_p1.txt")
+    content := lib.ReadTxt("inputs/input.txt")
     split_content := strings.Split(string(content), "\n")
 
     ///// PART 1 /////

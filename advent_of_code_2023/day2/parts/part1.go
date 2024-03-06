@@ -25,6 +25,7 @@ func SumColors(content []string) int{
         content[game] = strings.ReplaceAll(content[game], ",", "")
         sep_content := strings.Split(content[game], ";")
 
+        var game_status bool
         for sep := range sep_content {
             single_it_map := make(map[string]string)
             parts := strings.Fields(sep_content[sep])
@@ -48,21 +49,24 @@ func SumColors(content []string) int{
                 return 0
             }
 
-            fmt.Println(single_it_map)
-
             // check if current map is not 0 then continue
             if len(single_it_map) == 0 {
             } else {
                 red_count := getValue("red")
                 green_count := getValue("green")
                 blue_count := getValue("blue")
-                if (red_count < red_constr &&
-                green_count < green_constr &&
-                blue_count < blue_constr) {
-                    fmt.Println("CHECKS OUT")
-                    continue
-                } else { fmt.Println("DOESN'T CHECKS OUT") }
+                if (red_count <= red_constr &&
+                green_count <= green_constr &&
+                blue_count <= blue_constr) {
+                    game_status = true
+                } else { 
+                    game_status = false
+                    break
+                }
             }
+        }
+        if game_status == true {
+            id_sum += game + 1
         }
     }
     return id_sum
